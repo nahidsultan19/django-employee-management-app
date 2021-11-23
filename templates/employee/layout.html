@@ -19,23 +19,25 @@
 </head>
 
 <body>
-    <div class="navbar navbar-expand-md navbar-dark bg-dark top-fixed">
-        <div class="container">
-            <a href="" class="navbar-brand mr-3">Django</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-darget="Nav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="Nav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item nav-link">Home</li>
-                    <li class="nav-item nav-link">About</li>
-                    <li class="nav-item nav-link">Contact</li>
-                </ul>
+    <div class="">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a href="" class="navbar-brand">Brand logo </a>
+                <div class="navbar-nav mr-auto">
+                    <a href="" class="nav-item nav-link">Home</a>
+                    <a href="" class="nav-item nav-link">About</a>
+                    <a href="" class="nav-item nav-link">Contact</a>
+                </div>
                 <div class="navbar-nav">
+                    {% if user.is_authenticated %}
+                    <a href="" class="nav-item nav-link">Logout</a>
+                    {% else %}
                     <a href="" class="nav-item nav-link">Login</a>
+                    <a href="" class="nav-item nav-link">Sign Up</a>
+                    {% endif %}
                 </div>
             </div>
-        </div>
+        </nav>
     </div>
 
     <div class="container">
