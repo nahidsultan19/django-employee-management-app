@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Position List</h1>
+
+{% for position in positions %}
+
+<p>
+	{{position.title}}
+
+	<a href="{% url 'position-update' position.id %}"> <i class="fa fa-edit fa-sm"></i> Edit</a>
+	<a href="{% url 'position-delete' position.id %}" class="text-danger"> <i class="fa fa-trash fa-sm"></i> Delete</a>
+</p>
+
+
+{% endfor %}
+<a href="{% url 'home' %}">Go to list</a>
+
+{% endblock %}

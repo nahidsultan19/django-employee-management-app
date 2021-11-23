@@ -1,0 +1,1 @@
+django function and class base application. Employee Management system crud app.

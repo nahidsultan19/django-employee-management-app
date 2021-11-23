@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h1 class="font-italic">Employee List</h1>
+
+<table class="table table-bordered text-center">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Position</th>
+            <th>
+                ( <a href="{% url 'form' %}">Add New</a> )
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for emp in employees %}
+        <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.position}}</td>
+            <td>
+                <a href="{% url 'update' emp.id %}" class="text-info"><i class="fa fa-edit fa-sm"></i> update</a>
+                <a href="{% url 'delete' emp.id %}" class="text-danger"> <i class="fa fa-trash fa-sm"></i> delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'position-list' %}">Position</a>({{position_count}})
+
+{% endblock %}

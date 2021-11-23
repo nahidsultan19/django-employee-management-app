@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<p>Are you sure, you want to delete "{{position}}" position ? </p>
+
+<form method="POST">
+	{% csrf_token %}
+
+	<button class="btn btn-danger">Yes, I'm sure</button>
+	<a href="{% url 'position-list' %}">Cancel</a>	
+</form>
+
+
+{% endblock %}

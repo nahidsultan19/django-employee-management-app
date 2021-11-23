@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="card mt-2">
+    <div class="card-body">
+
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <div class="border-bottom">
+                    <legend>Delete Employee</legend>
+                </div>
+                <p>Are you sure, you want to delete "{{emp}}" </p>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-danger">Yes, I'm sure</button>
+                <a href="{% url 'home' %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

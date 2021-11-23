@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="card mt-2">
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+            <button class="btn btn-success">Submit</button>
+            <a href="{% url 'home' %}">View List</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
